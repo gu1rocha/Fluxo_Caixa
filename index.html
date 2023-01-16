@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./assets/css/inicialize.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <title>Fluxo de Caixa</title>
+
+    <script src="./assets/js/uteis.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+
+    <link rel="stylesheet" href="./messageBox/assets/css/style.css">
+    <script src="./messageBox/assets/js/script.js"></script>
+    
+    <script src="./assets/js/script.js" defer="defer"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+            <div class="compras">COMPRAS</div>
+            <div class="pagamentos">PAGAMENTOS</div>
+            <div class="saldos">SALDOS</div>
+        </div>
+        <h1 class="titulo">TITULO</h1>
+        <div class="vazio hidden">
+            <h1>Nenhuma compra encontrada</h1>
+        </div>
+        <div class="table hidden">
+            <div class="head_table"></div>
+            <div class="body_table"></div>
+        </div>
+        <aside>
+            <button class="show_box_compra">Adicionar Compra</button>
+        </aside>
+        <div class="box_grafico hidden">
+            <div class="controle_grafico">
+                <label for="legenda_grafico">Selecione o tipo do gráfico</label>
+                <select id="legenda_grafico">
+                    <option value="1">LOJA</option>
+                    <option value="2">MÊS</option>
+                </select>
+            </div>
+            <div class="grafico">
+                <canvas id="grafico_despesa_mensal"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="back_box_compra hidden">
+        <form class="box_compra">
+            <div class="top">
+                <h1>Dados da compra</h1>
+                <span class="material-symbols-sharp close">close</span>
+            </div>
+            <div class="box_inputs">
+                <div class="box_input" style="width: calc(100% - 1rem);">
+                    <label for="nome_loja">LOJA</label>
+                    <input type="text" id="nome_loja" name="nome_loja">
+                </div>
+                <div class="box_input">
+                    <label for="data_compra">DATA DA COMPRA</label>
+                    <input type="datetime-local" id="data_compra" style="width: 15rem;" name="data_compra">
+                </div>
+                <div class="box_input">
+                    <label for="qtd_parcela">QTD PARCELAS</label>
+                    <input type="number" id="qtd_parcela" style="width: 9.5rem;" name="qtd_parcela" min="0">
+                </div>
+                <div class="box_input">
+                    <label for="valor_parcela">VALOR PARCELA</label>
+                    <input type="number" id="valor_parcela" style="width: 9.5rem;" name="valor_parcela" step="0.01" min="0">
+                </div>
+                <div class="box_input">
+                    <label>VALOR TOTAL</label>
+                    <div style="width: 9.5rem;" class="valor_total">R$ 0,00</div>
+                </div>
+                <div class="box_input" style="width: calc(100% - 1rem);">
+                    <label for="obs_compra">OBSERVAÇÕES</label>
+                    <textarea id="obs_compra" name="obs_compra"></textarea>
+                </div>
+            </div>
+            <div class="bottom">
+                <button class="adicionar" type="submit">Adicionar</button>
+                <button class="cancelar">Cancelar</button>
+            </div>
+        </form>
+    </div>
+    
+    <div class="back_box_pagamento hidden">
+        <form class="box_pagamento">
+            <div class="top">
+                <h1>Dados da pagamento</h1>
+                <span class="material-symbols-sharp close">close</span>
+            </div>
+            <div class="box_inputs">
+                <div class="box_input" style="width: calc(100% - 1rem);">
+                    <label for="nome_loja">LOJA</label>
+                    <input class="nome_loja" id="nome_loja_pagamento" disabled="disabled"></input>
+                </div>
+                <div class="box_input">
+                    <label for="data_pagamento">DATA DO PAGAMENTO</label>
+                    <input type="datetime-local" id="data_pagamento" style="width: 15rem;" name="data_pagamento">
+                </div>
+                <div class="box_input">
+                    <label for="qtd_parcela_pagamento">QTD PARCELAS</label>
+                    <select name="qtd_parcela_pagamento" id="qtd_parcela_pagamento" style="width: 9.5rem;"></select>
+                </div>
+                <div class="box_input">
+                    <label for="valor_parcela_pagamento">VALOR PARCELA</label>
+                    <input class="valor_parcela_pagamento" id="valor_parcela_pagamento" style="width: 9.5rem;" disabled="disabled"></input>
+                </div>
+                <div class="box_input">
+                    <label>VALOR TOTAL</label>
+                    <div style="width: 9.5rem;" class="valor_total">R$ 0,00</div>
+                </div>
+                <div class="box_input" style="width: calc(100% - 1rem);">
+                    <label for="obs_pagamento">OBSERVAÇÕES</label>
+                    <textarea id="obs_pagamento" name="obs_pagamento"></textarea>
+                </div>
+            </div>
+            <div class="bottom">
+                <button class="pagar" type="submit">Adicionar</button>
+                <button class="cancelar">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
