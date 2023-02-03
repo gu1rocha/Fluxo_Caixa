@@ -2,7 +2,7 @@ let showMessageBox = ()=> {
 
     let BoxMessage = {
         showMessage: function(objeto){
-            GetHTML('./messageBox/index.html', 'get',  function(obj) {
+            GetHTML('/Fluxo_Caixa/messageBox/index.html', 'get',  function(obj) {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(obj.responseText, "text/html");
                 

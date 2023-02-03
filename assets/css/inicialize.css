@@ -134,3 +134,20 @@ input[type="search"]:focus::-webkit-search-cancel-button {
     opacity: 1;
     pointer-events: all;
 }
+
+main{
+    width: 95%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0rem 0rem 1rem var(--color-dark-variant);
+}
+
+main h1.titulo{
+    color: var(--color-primary-light);
+    border-bottom: solid 1px var(--color-primary-dark);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+}
